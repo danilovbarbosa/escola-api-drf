@@ -6,6 +6,7 @@ authors = ["Danilo Costa <danilo.barbosa@fapce.edu.br>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+Django = "^3.2.4"
 
 [tool.poetry.dev-dependencies]
 
