@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "escola_api_drf"
+version = "0.1.0"
+description = "Projeto produzido na formação DRF do Alura."
+authors = ["Danilo Costa <danilo.barbosa@fapce.edu.br>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
