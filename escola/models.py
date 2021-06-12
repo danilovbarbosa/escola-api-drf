@@ -21,7 +21,9 @@ class Curso(models.Model):
 
     codigo_curso = models.CharField(max_length=50)
     descricao = models.CharField(max_length=11)
-    nivel = models.CharField(max_length=11)
+    nivel = models.CharField(
+        max_length=1, choices=NIVEL, blank=False, null=False, default="B"
+    )
 
     def __str__(self):
-        return self.nome
+        return self.descricao
