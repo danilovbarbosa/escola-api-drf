@@ -9,6 +9,8 @@ python = "^3.9"
 Django = "^3.2.4"
 flake8 = "^3.9.2"
 black = "^21.6b0"
+djangorestframework = "^3.12.4"
+Markdown = "^3.3.4"
 
 [tool.poetry.dev-dependencies]
 
