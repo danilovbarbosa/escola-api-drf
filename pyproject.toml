@@ -11,6 +11,8 @@ flake8 = "^3.9.2"
 black = "^21.6b0"
 djangorestframework = "^3.12.4"
 Markdown = "^3.3.4"
+mypy = "^0.902"
+safety = "^1.10.3"
 
 [tool.poetry.dev-dependencies]
 
@@ -19,17 +21,22 @@ line-length = 79
 include = '\.pyi?$'
 exclude = '''
 /(
-\.git
-| \.hg
-| \.mypy_cache
-| \.tox
-| \.venv
-| _build
-| buck-out
-| build
-| dist
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
 )/
 '''
+
+[tool.mypy]
+warn_return_any = true
+warn_unused_configs = true
+exclude = "setup/|manage.py|migrations/"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
