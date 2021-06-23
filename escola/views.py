@@ -8,11 +8,15 @@ from escola.serializer import (
     ListaMatriculasAlunoSerializer,
     ListaAlunosMatriculadosSerializer,
 )
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 class AlunoViewSet(viewsets.ModelViewSet):  # type: ignore
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
 class CursoViewSet(viewsets.ModelViewSet):  # type: ignore
