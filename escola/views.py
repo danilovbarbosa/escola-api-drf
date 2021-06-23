@@ -6,6 +6,7 @@ from escola.serializer import (
     CursoSerializer,
     MatriculaSerializer,
     ListaMatriculasAlunoSerializer,
+    ListaAlunosMatriculadosSerializer,
 )
 
 
@@ -34,3 +35,15 @@ class ListaMatriculasAluno(generics.ListAPIView):  # type: ignore
         return queryset
 
     serializer_class = ListaMatriculasAlunoSerializer
+
+
+class ListaAlunosMatriculados(generics.ListAPIView):  # type: ignore
+    """
+    Listando alunos e alunas matriculados em um curso
+    """
+
+    def get_queryset(self) -> QuerySet:
+        queryset = Matricula.objects.filter(curso_id=self.kwargs["pk"])
+        return queryset
+
+    serializer_class = ListaAlunosMatriculadosSerializer
