@@ -22,11 +22,15 @@ class AlunoViewSet(viewsets.ModelViewSet):  # type: ignore
 class CursoViewSet(viewsets.ModelViewSet):  # type: ignore
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
 class MatriculaViewSet(viewsets.ModelViewSet):  # type: ignore
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
 class ListaMatriculasAluno(generics.ListAPIView):  # type: ignore
@@ -39,6 +43,8 @@ class ListaMatriculasAluno(generics.ListAPIView):  # type: ignore
         return queryset
 
     serializer_class = ListaMatriculasAlunoSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
 class ListaAlunosMatriculados(generics.ListAPIView):  # type: ignore
@@ -51,3 +57,5 @@ class ListaAlunosMatriculados(generics.ListAPIView):  # type: ignore
         return queryset
 
     serializer_class = ListaAlunosMatriculadosSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
