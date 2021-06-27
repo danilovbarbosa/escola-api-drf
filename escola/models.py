@@ -6,7 +6,7 @@ from django.db.models.deletion import CASCADE
 class Aluno(models.Model):
     nome = models.CharField(max_length=50)
     rg = models.CharField(max_length=11)
-    cpf = models.CharField(max_length=11)
+    cpf = models.CharField(max_length=11, unique=True)
     data_de_nascimento = models.DateField()
 
     def __str__(self):
