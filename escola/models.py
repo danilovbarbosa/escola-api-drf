@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.deletion import CASCADE
 
 
 # Create your models here.
@@ -9,8 +8,8 @@ class Aluno(models.Model):
     cpf = models.CharField(max_length=11, unique=True)
     data_de_nascimento = models.DateField()
 
-    def __str__(self):
-        return self.nome
+    def __str__(self) -> str:
+        return str(self.nome)
 
 
 class Curso(models.Model):
@@ -26,8 +25,8 @@ class Curso(models.Model):
         max_length=1, choices=NIVEL, blank=False, null=False, default="B"
     )
 
-    def __str__(self):
-        return self.descricao
+    def __str__(self) -> str:
+        return str(self.descricao)
 
 
 class Matricula(models.Model):
@@ -43,5 +42,5 @@ class Matricula(models.Model):
         max_length=1, choices=PERIODO, blank=False, null=False, default="M"
     )
 
-    def __str__(self):
-        return f"{self.aluno} - {self.curso}"
+    def __str__(self) -> str:
+        return str(f"{self.aluno} - {self.curso}")
