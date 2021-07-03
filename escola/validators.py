@@ -1,6 +1,5 @@
 def validate_cpf(cpf: str) -> bool:
-    return len(cpf) != 11
-
+    return len(cpf) == 11
 
 # def validate_nome(self, nome: str) -> str:
 #     if not nome.isalpha():
